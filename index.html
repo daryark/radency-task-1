@@ -4,23 +4,79 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://kit.fontawesome.com/bb189b53e4.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="./index.css" />
 	</head>
-	<body>
-		<table>
-			<thead>
+	<body class="p-4 text-neutral-900">
+		<table class="w-full mb-20">
+			<thead class="bg-yellow-500">
 				<tr>
-					<th>Name</th>
-					<th>Created</th>
-					<th>Category</th>
-					<th>Content</th>
-					<th>Dates</th>
-					<th></th>
-					<th></th>
-					<th></th>
+					<th class="rounded-l-md p-2">Name</th>
+					<th class="p-2">Created</th>
+					<th class="p-2">Category</th>
+					<th class="p-2">Content</th>
+					<th class="p-2">Dates</th>
+					<th class="p-2"></th>
+					<th class="p-2"></th>
+					<th class="rounded-r-md p-2"></th>
 				</tr>
 			</thead>
-			<tbody></tbody>
+			<tbody data-main-table></tbody>
 		</table>
-		<script type="module" src="index.js"></script>
+		<button
+			class="text-center py-2 border-2 rounded-xl bg-yellow-500 w-28 fixed bottom-6 right-6 hover:bg-yellow-600 ease-in-out duration-300"
+			data-open-modal
+			>Create note</button
+		>
+		<table class="w-full">
+			<thead class="bg-yellow-500">
+				<tr>
+					<th class="rounded-l-md p-2">Note Category</th>
+					<th class="p-2">Active</th>
+					<th class="rounded-r-md p-2">Archived</th>
+				</tr>
+			</thead>
+			<tbody data-sum-table> </tbody>
+		</table>
+
+		<div
+			class="fixed top-0 left-0 bg-black/30 w-full h-full opacity-100 ease-in-out duration-300 transition-opacity backdrop"
+			data-modal-backdrop>
+			<div class="modal ease-in duration-300 transition-transform bg-white border-2 p-8">
+				<button
+					class="absolute top-1 right-1 hover:scale-125 px-1.5 rounded-full ease-in duration-300"
+					type="button"
+					data-close-modal
+					><i class="fa-solid fa-xmark"></i
+				></button>
+				<form action="submit" class="flex flex-col">
+					<input
+						type="text"
+						name="title"
+						placeholder="My note"
+						class="outline-none focus:bg-slate-100 p-2 mb-4" />
+					<select name="category" class="border-none outline-none focus:bg-slate-100 p-2 mb-4">
+						<option value="task">Task</option>
+						<option value="random">Random Thought</option>
+						<option value="idea">Idea</option>
+					</select>
+					<textarea
+						name="content"
+						id="content"
+						cols="30"
+						rows="10"
+						placeholder="content"
+						class="border-none outline-none focus:bg-slate-100/50 p-2 mb-4"></textarea>
+					<button
+						type="button"
+						class="text-center py-2 border-2 rounded-xl bg-yellow-500 w-28 hover:bg-yellow-600 ease-in-out duration-300 block mx-auto"
+						data-close-and-save-modal
+						>Save</button
+					>
+				</form>
+			</div>
+		</div>
+		<script type="module" src="./index.js"></script>
 	</body>
 </html>
