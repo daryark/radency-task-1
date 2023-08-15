@@ -14,11 +14,10 @@ const {
 } = refs;
 
 listen(addNoteBtn);
-listen(notesTable, openEditModal); //for edit, archive, remove
 listen(backdrop);
 listen(closeAndSaveModalBtn, saveNoteHandler);
 
-function listen(el, fn = toggleModal) {
+export function listen(el, fn = toggleModal) {
 	el.addEventListener("click", fn);
 }
 

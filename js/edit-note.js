@@ -1,11 +1,11 @@
 import data from "../data/data.js";
 import refs from "../utils/refs.js";
 import { datesList } from "./card-markup.js";
-import { toggleModal } from "./toggle-modal.js";
+import { listen, toggleModal } from "./toggle-modal.js";
 
 const { notesTable, closeAndSaveModalBtn, noteTitle, noteContent, noteCategoryOptions } = refs;
 
-notesTable.addEventListener("click", openEditModal);
+listen(notesTable, openEditModal);
 // fa-pencil
 // fa-folder
 // fa-trash
@@ -55,7 +55,6 @@ export function editNote() {
 					}
 				});
 			}
-			// return el;
 		});
 	} catch (error) {
 		console.error(error);
