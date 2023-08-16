@@ -8,8 +8,10 @@ export function addNote() {
 	try {
 		const note = {
 			id: idGenerate(),
-			name: noteTitle.value,
 			created: Date.now(),
+			archive: false,
+
+			name: noteTitle.value,
 			category: noteCategoryOptions.selectedOptions[0].textContent,
 			content: noteContent.value,
 		};

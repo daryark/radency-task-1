@@ -10,6 +10,7 @@ export function saveNoteHandler(e) {
 	if (e.target.hasAttribute("note-id")) {
 		console.log("edit");
 		editNote();
+
 		closeAndSaveModalBtn.removeAttribute("note-id");
 
 		noteTitle.value = "";
@@ -17,7 +18,6 @@ export function saveNoteHandler(e) {
 		noteCategoryOptions[0].selected = true;
 	} else {
 		console.log("add");
-
 		addNote();
 	}
 }

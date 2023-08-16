@@ -1,5 +1,6 @@
 const refs = {
 	notesTable: document.querySelector("[data-main-table]"),
+	sumTable: document.querySelector("[data-sum-table]"),
 	noteForm: document.querySelector("form"),
 	noteTitle: document.querySelector("[name='title']"),
 	noteCategoryOptions: document.querySelector("[name='category']"),

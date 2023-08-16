@@ -6,13 +6,8 @@ import { listen, toggleModal } from "./toggle-modal.js";
 const { notesTable, closeAndSaveModalBtn, noteTitle, noteContent, noteCategoryOptions } = refs;
 
 listen(notesTable, openEditModal);
-// fa-pencil
-// fa-folder
-// fa-trash
 
 export function openEditModal(e) {
-	console.dir(e.target);
-
 	if (e.target.classList.contains("fa-pencil")) {
 		toggleModal(e);
 
